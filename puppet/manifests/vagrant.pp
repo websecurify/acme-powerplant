@@ -32,9 +32,9 @@ class apache-setup {
 	}
 	
 	apache::vhost { 'acme-powerplant':
+		default_vhost => true,
 		port => '80',
 		docroot => '/vagrant/app',
-		default_vhost => true,
 	}
 }
 
