@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   config.vm.network :private_network, ip: "192.168.56.101"
+  # config.vm.host_name "acme-powerplant"
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]

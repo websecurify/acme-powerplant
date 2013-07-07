@@ -37,7 +37,7 @@ class apache-setup {
 
   apache::vhost { 'acme-powerplant':
     port => '80',
-    docroot => '/vagrant/www',
+    docroot => '/vagrant/app',
 	default_vhost => true,
   }
 }
