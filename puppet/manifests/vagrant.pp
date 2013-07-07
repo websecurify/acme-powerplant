@@ -1,7 +1,12 @@
 class system-update {
   class { 'apt':
-    always_apt_update => true,
   }
+
+  exec { 'apt-update':
+    command => '/usr/bin/apt-get update',
+  }
+
+  Exec['apt-update'] -> Package <| |>
 }
 
 class mysql-setup {
@@ -9,7 +14,7 @@ class mysql-setup {
 
   class { 'mysql':
   }
-  
+
   class { 'mysql::php':
   }
 
